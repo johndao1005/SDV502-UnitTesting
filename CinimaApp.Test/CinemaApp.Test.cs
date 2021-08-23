@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
+using CinemaApp;
 
-namespace CinemaApp
+namespace CinemaApp.Test
 {
     public class PriceTicketTest
     {

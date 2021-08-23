@@ -15,32 +15,17 @@ namespace CinemaApp
         }
 
         [Theory]
-        [MemberData(nameof(TestData))]
-        public void Adult_Before_5(decimal expectd, int ticket_quanity, string customer_type, string date, decimal time)
+        [InlineData(14.50, 1, "adult", "thursday", 4.00)]
+        [InlineData(14.50, 1, "adult", "thursday", 4.00)]
+        [InlineData(14.50, 1, "adult", "thursday", 4.00)]
+        [InlineData(14.50, 1, "adult", "thursday", 4.00)]
+        [InlineData(14.50, 1, "adult", "thursday", 4.00)]
+        public void Adult_Before_5_Price(decimal expectd, int ticket_quanity, string customer_type, string date, decimal time)
         {
             //Act
             decimal cost = _app.Adult_Before_5(ticket_quanity, customer_type, date, time);
             //Assert
             Assert.Equal(expectd, cost);
         }
-
-        public static IEnumerable<object[]> TestData()
-        {
-            yield return new object[] { 14.50, 1, "adult", "thursday", 4.00 };
-        }
-
-        /*[Theory]
-        [InlineData(13, 5, 8)]
-        [InlineData(0, -3, 3)]
-        [InlineData(0, 0, 0)]
-        [MemberData(nameof(TestData))] option 2
-         public void Add2NumberAndCompareToResultTheory(decimal expected, params decimal[] valuesToAdd)
-        {
-            foreach (var value in valuesToAdd)
-            {
-                _app.Add(value);
-            }
-            Assert.Equal(expected, _app.Value);
-        }*/
     }
 }

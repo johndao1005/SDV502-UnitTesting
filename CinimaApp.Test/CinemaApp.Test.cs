@@ -100,7 +100,7 @@ namespace CinemaApp.Test
         }
 
         [Theory]
-        [InlineData(46.00, 1, 2, 2)]
+        [InlineData(46.00, 1, 1, 3)]
         [InlineData(92.00, 2, 2, 6)]
         [InlineData(-1, 2, 2, 1)]
         [InlineData(-1, 2, 2, 3)]
